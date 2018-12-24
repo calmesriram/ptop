@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+
+      <div class="card screencenter">
+          <div class="card-header text-center text-primary myfont">
+              LogIn
+            </div>
+            <div class="card-body">
+                <form  [formGroup]="myangForm" (ngSubmit)="Login()">
+                 
+                      <div class="form-group">
+                          <label for="inputsm">Email:</label>
+                          <input class="form-control inputsm" id="Email" placeholder="Email" type="text"   [(ngModel)]="myemailid"  ng-trim="true"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.myemailid.errors }"  formControlName="myemailid"  autocomplete="off" required>
+                          <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                            <div *ngIf="f.Email.errors.required">Email is required</div>
+                        </div>
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="inputsm">Password:</label>
+                            <input class="form-control inputsm" id="Password" placeholder="Password"   [(ngModel)]="Password"  ng-trim="true"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }"   type="password" formControlName="Password" autocomplete="off" required>
+                            <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                                <div *ngIf="f.Password.errors.required">Password is required</div>
+                            </div>
+                          </div> 
+
+                          <div class="form-group">
+                                <button type="button"  [disabled]="!myangForm.valid" class="btn btn-primary" routerLink="/menu">LogIn</button>                             
+                            </div>
+                          </form>  
+              </div>           
+      </div>
+  </div>
+  <div class="col-sm-04"></div>
+  </div>
