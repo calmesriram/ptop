@@ -5,10 +5,12 @@
             <div class="nav-item dropdown">
   
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="../../assets/profile/avatar3.jpeg" alt="..." class="rounded-circle" blank width="35" height="35" blank-color="#777">
+                    <small><a style="color:white">{{displayusername}}</a></small>&nbsp;&nbsp;
+                  <img src="../../assets/profile/avatar3.jpeg" alt="..." class="rounded-circle" blank width="35" height="35" blank-color="#777">
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Log Out</a>
+               
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">                    
+                  <a class="dropdown-item"(click)="logout()">Log Out</a>
                 </div>
               </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               

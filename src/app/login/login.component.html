@@ -7,26 +7,20 @@
               LogIn
             </div>
             <div class="card-body">
-                <form  [formGroup]="myangForm" (ngSubmit)="Login()">
+                <form  [formGroup]="myangForm" (ngSubmit)="login()">
                  
                       <div class="form-group">
                           <label for="inputsm">Email:</label>
-                          <input class="form-control inputsm" id="Email" placeholder="Email" type="text"   [(ngModel)]="myemailid"  ng-trim="true"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.myemailid.errors }"  formControlName="myemailid"  autocomplete="off" required>
-                          <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
-                            <div *ngIf="f.Email.errors.required">Email is required</div>
-                        </div>
+                          <input class="form-control inputsm"  placeholder="Email" type="text" ng-trim="true"  class="form-control" formControlName="myemail"  autocomplete="off" required>
                         </div>
   
                         <div class="form-group">
                             <label for="inputsm">Password:</label>
-                            <input class="form-control inputsm" id="Password" placeholder="Password"   [(ngModel)]="Password"  ng-trim="true"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }"   type="password" formControlName="Password" autocomplete="off" required>
-                            <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
-                                <div *ngIf="f.Password.errors.required">Password is required</div>
-                            </div>
+                            <input class="form-control inputsm" placeholder="Password"  ng-trim="true"  class="form-control"  type="password" formControlName="pwd" autocomplete="off" required>                            
                           </div> 
 
                           <div class="form-group">
-                                <button type="button"  [disabled]="!myangForm.valid" class="btn btn-primary" routerLink="/menu">LogIn</button>                             
+                                <button type="submit"  [disabled]="!myangForm.valid" class="btn btn-primary">LogIn</button>                             
                             </div>
                           </form>  
               </div>           

@@ -3,20 +3,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
-
+import { AuthGuradGuard } from './services/auth-gurad.guard';
 
 const routes: Routes = [
   {
-    path:'',
-    component:SignupComponent
+    path:'signup',
+    component:SignupComponent,
+    canActivate:[AuthGuradGuard]        
   },
   {
     path:'login',
-    component:LoginComponent
+    component:LoginComponent,
+    canActivate:[AuthGuradGuard]        
   },
   {
     path:'menu',
-    component:MenuComponent
+    component:MenuComponent,
   },
   {
     path:'',

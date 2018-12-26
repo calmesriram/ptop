@@ -6,8 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { SignupComponent } from './signup/signup.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule,FormBuilder } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthenticationService } from './services/authentication.service';
+import { CreateOrderService } from './services/create-order.service';
+import { ScriptLoaderService } from './services/script-loader.service';
+import { AuthGuradGuard } from './services/auth-gurad.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +26,19 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule 
+    FormsModule,
+    HttpClientModule
+    // HttpClient 
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    AuthGuradGuard,
+    CreateOrderService,
+    ScriptLoaderService,
+    FormBuilder,
+    ReactiveFormsModule,
+    { provide: Window, useValue: window }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
